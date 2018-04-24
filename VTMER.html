@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="VTMER.css">
+</head>
+<body>
+<div class="container">
+	<div class="top">
+		<table id="top_table">
+			<tr>
+				<td id="top_left">
+					<a href="#"><span>回到首页</span></a>&nbsp;
+					<a href="#"><span>关注微信</span></a>
+				</td>
+				<td id="top_right"><span>apple&nbsp;你好</span></td>
+			</tr>
+		</table>
+	</div>
+	<div id="logo">
+	<table id="logo_table">
+		<tr>
+			<td id="logo_left">
+				<table id="left_table"><tr>
+			<td><img src="VTMER/logo.png"></td>
+			<td align="center" style="border-right: 1px #dfdfdf solid;padding-right: 6px">
+				<span id="logo_blue">维生数</span>
+				<hr size="1">
+				<span id="logo_black">COMPUTE-STUDIO-VTMER</span>
+			</td>
+			<td id="logo_text">
+			    <span>广工知名工作室品牌</span><br>
+			    <span>广工计算机行业最具影响力的工作室之一</span>
+			</td>
+		       </tr></table>
+		</td>
+		<td id="logo_right" style="padding-right: 2em">
+			<img src="VTMER/phone.png">&nbsp;
+			<span id="logo_number">400-0399-386</span>
+		</td>
+		</tr>
+	</table>	
+	</div>
+	<div>
+		<div class="main_nav">
+			<table id="nav_table">
+				<tr>
+					<td><a href="#">首页</a></td>
+					<td><a href="#">服务套餐</a></td>
+					<td><a href="#">行业方案</a></td>
+					<td><a href="#">培训中心</a></td>
+					<td><a href="#">团队风采</a></td>
+					<td><a href="#">关于我们</a></td>
+					<td><a href="#">会员中心</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div id="banner">
+	<a href="#" class="ig"><img src="VTMER/banner1.png"></a>
+	<a href="#" class="ig"><img src="VTMER/banner2.png"></a>
+	<a href="#" class="ig"><img src="VTMER/banner3.png"></a>
+	<div class="btn btn_1"><img src="VTMER/back.png"></div>
+	<div class="btn btn_2"><img src="VTMER/right.png"></div>
+	<div id="tabs">
+		<div class="tab"></div>
+		<div class="tab"></div>
+		<div class="tab"></div>
+	</div>
+</div>
+<script type="text/javascript">  
+//初始化轮播图  
+var index= 0; //默认第一张的索引  
+var imgs=document.getElementsByClassName('ig');//轮播图片  
+var tabs=document.getElementsByClassName('tab');//按钮  
+var btns=document.getElementsByClassName('btn');  
+//将其他轮播图都隐藏，只显示第一张  
+for(var i= 0;i<imgs.length;i++){  
+    // imgs[i].style.display='none';  
+    if(index!==i){  
+    imgs[i].style.display="none";  
+     }  
+}  
+//将第一个按钮背景变成红色  
+// tabs[index].className='tab bg';//同时设定多个样式  
+tabs[index].classList.add('bg');//追加样式  
+// 自动轮播  
+function carouseal(){  
+    //将定时器id返回  
+  return setInterval(
+    function(){  
+   //隐藏图片  
+   imgs[index].style.display='none';  
+   tabs[index].classList.remove('bg');  
+   index++;  
+   //判断是否循环到最后一种  
+   if(index==imgs.length){  
+      index=0;//重新从第一张开始  
+   }  
+   //显示图片  
+   imgs[index].style.display='block';  
+   tabs[index].classList.add('bg');  
+},1000);  
+}  
+//调用自动轮播  
+var timer=carouseal()  
+//按钮点击上一张  
+btns[0].onclick=function(){  
+    //先关闭自动轮播  
+    clearInterval(timer);  
+    imgs[index].style.display="none"  
+    tabs[index].classList.remove('bg');  
+    //如果显示为第一张图片  
+    if(index ==0){  
+        index=imgs.length;//重新设置为最后一张  
+    }  
+        index--;  
+    imgs[index].style.display="block";  
+    tabs[index].classList.add('bg');  
+}  
+  
+btns[1].onclick =function(){  
+   //关闭定时器  
+    clearInterval(timer);  
+    //隐藏图片  
+    imgs[index].style.display="none"  
+    tabs[index].classList.remove('bg');  
+        index++;  
+    //如何显示为最后一张图片  
+    if(index ==3){  
+        index=0;//重新设置为最后一张  
+    }     
+    imgs[index].style.display="block";  
+    tabs[index].classList.add('bg');  
+      
+}  
+//点击按钮选择轮播图  
+for(var i=0;i<tabs.length;i++){  
+    tabs[i].x=i;//将i的值赋值给tabs[i]的x属性  
+    tabs[i].onclick=function(){  
+        //清除定时器  
+    clearInterval(timer);  
+    imgs[index].style.display="none";  
+    tabs[index].classList.remove('bg');  
+    //显示图片  
+    imgs[this.x].style.display="block";  
+    tabs[this.x].classList.add('bg');  
+    index=this.x      
+    }  
+}  
+//隐藏显示图片的函数  
+/*function showImg(i){  //i:需要显示的图片的索引  
+    //隐藏图片  
+    imgs[index].style.display="none"  
+    tabs[index].classList.remove('bg');  
+    //显示图片  
+    imgs[i].style.display="none"  
+    tabs[i].classList.remove('bg');   
+}  
+*/  
+  
+//鼠标移动到图片上时,停止自动轮播  
+document.getElementById('banner').onmouseover=function(){  
+    clearInterval(timer);//停止自动轮播  
+}  
+//鼠标移出到图片上时,重新开始自动轮播  
+document.getElementById('banner').onmouseleave=function(){  
+    // clearInterval(timer);//停止自动轮播  
+    timer=carouseal();  
+}  
+  
+</script>  
+	<div class="Item">
+	</div>
+</div>
+</body>
+</html>

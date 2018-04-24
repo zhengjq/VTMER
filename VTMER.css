@@ -1,0 +1,151 @@
+body{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+*{
+	padding: 0;
+	margin: 0 auto;
+}
+.container{
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	min-width: 1200px;
+}
+.top{
+	width: 100%;
+	background-color: #dfdfdf;
+	text-align: center;
+}
+#top_table{
+	width: 80%;
+	padding: 0.6em 0 0.6em 0;
+}
+#top_table{
+	font-size: 0.7em;
+}
+#top_left{
+	text-align: left;
+}
+#top_left a{
+	text-decoration: none;
+	color: black;
+}
+#top_right{
+	text-align: right;
+}
+#logo_table{
+	width: 80%;
+	padding: 1.2em 0 1.2em 0;
+}
+#logo_left{
+	text-align: left;
+}
+#logo_right{
+	text-align: right;
+}
+#left_table{
+	margin-left: 0;
+}
+#logo_blue{
+	font-size: 2em;
+	font-family: "黑体";
+	color: #4385e8;
+	font-weight: bolder;
+}
+#left_table hr{
+	width: 90%;
+}
+#logo_black{
+	font-size: 0.7em;
+}
+#logo_text{
+	padding-left: 6px;
+	font-size: 0.8em;
+	font-weight: lighter;
+	line-height: 2.3em;
+}
+#logo_number{
+	font-size: 1em;
+	color: #ff0505;
+	vertical-align: 50%;
+}
+.main_nav{
+	background-color: #f49800;
+	width: 100%;
+}
+#nav_table{
+	width: 80%;
+	border: none;
+	border-collapse: collapse;
+}
+#nav_table td{
+	width: calc(100%/7);
+}
+#nav_table a{
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	width: 100%;
+	padding: 0.4em 0 0.4em 0;
+}
+#nav_table a:hover{
+	color: white;
+	background-color: #0db05f;
+}
+#banner{
+	margin: 0 auto;
+	width: 100%;
+    position: relative;
+    text-align: center;
+}
+#banner img{
+	width: 100%;
+	margin:0 auto;
+}
+#tabs{
+    list-style: none;   
+    border-radius: 10px;  
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tab{  
+    float: left;  
+    bottom: 2em;
+    text-align: center;   
+    width: 0.6em;  
+    height: 0.6em;  
+    cursor: pointer;  
+    overflow: hidden;   
+    border-radius: 100%; 
+    margin: 0 1em 0 1em; 
+    background-color: #636363;  
+}  
+.btn{  
+    position: absolute;  
+    color:#fff;  
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;  
+    background: transparent;
+    font-size: 40px;  
+    font-weight: bold;  
+    text-align: center;  
+    line-height: 100px;  
+    border-radius: 5px;  
+    margin: 0 5px;  
+}  
+.btn_2{  
+    position: absolute;
+    right: 0px;  
+} 
+ .btn:hover{   
+    cursor: pointer;  
+}  
+.bg{  
+    background-color: black;  
+}  
